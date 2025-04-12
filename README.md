@@ -1,4 +1,5 @@
 # Air Quality Monitoring Dashboard - Colombo
+![Screenshot 2025-04-12 233757](https://github.com/user-attachments/assets/4319acce-6bad-473d-a117-efa81313a8cc)
 
 Real-time air quality monitoring system for Colombo city with simulated sensor data.
 
@@ -9,6 +10,8 @@ Real-time air quality monitoring system for Colombo city with simulated sensor d
 - Alert system
 - User management
 - Data simulation system
+
+![Screenshot 2025-04-12 233848](https://github.com/user-attachments/assets/3b598a70-23c9-467e-8fdb-4c1655a1c8ab)
 
 ## Setup
 1. Install XAMPP
