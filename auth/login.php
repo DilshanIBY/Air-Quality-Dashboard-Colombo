@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Get user from database
         $stmt = $pdo->prepare("
-            SELECT id, username, password, role, status 
+            SELECT id, username, password, role, status, full_name 
             FROM users 
             WHERE username = ? 
             AND status = 'active'
@@ -44,10 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Log successful login
             $logStmt = $pdo->prepare("
-                INSERT INTO system_logs (log_type, message, user_id, ip_address) 
-                VALUES ('security', 'Successful login', ?, ?)
+                INSERT INTO system_logs (log_type, message, user_id, full_name, ip_address) 
+                VALUES ('security', 'Successful login', ?, ?, ?)
             ");
-            $logStmt->execute([$user['id'], $_SERVER['REMOTE_ADDR']]);
+            $logStmt->execute([$user['id'], $user['full_name'], $_SERVER['REMOTE_ADDR']]);
 
             header('Location: ../admin/dashboard.php');
             exit;
@@ -271,4 +271,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </a>
     </div>
 </body>
-</html> 
+</html>

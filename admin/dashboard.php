@@ -898,7 +898,17 @@ $error = $_GET['error'] ?? '';
             <div class="user-info">
                 <i class="fas fa-user"></i>
                 <span><?php echo htmlspecialchars($username); ?></span>
-                <span class="role-badge"><?php echo htmlspecialchars(ucfirst($role)); ?></span>
+                <span class="role-badge">
+                    <?php 
+                        if ($role === 'system_admin') {
+                            echo 'System Admin';
+                        } elseif ($role === 'monitoring_admin') {
+                            echo 'Monitoring Admin';
+                        } else {
+                            echo htmlspecialchars(ucfirst($role));
+                        }
+                    ?>
+                </span>
             </div>
         </div>
 
@@ -1040,6 +1050,9 @@ $error = $_GET['error'] ?? '';
                 icon.classList.toggle('fa-moon');
                 icon.classList.toggle('fa-sun');
                 
+                // Save dark mode state to localStorage
+                localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+                
                 // Add bounce effect to theme toggle
                 const button = document.querySelector('.theme-toggle');
                 button.style.animation = 'none';
@@ -1051,6 +1064,14 @@ $error = $_GET['error'] ?? '';
                     transitionOverlay.style.display = 'none';
                 }, 1000);
             }, 500);
+        }
+
+        // Apply saved dark mode state on page load
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            const icon = document.querySelector('.theme-toggle i');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
         }
 
         // Logout confirmation functionality
@@ -1120,4 +1141,4 @@ $error = $_GET['error'] ?? '';
         });
     </script>
 </body>
-</html> 
+</html>

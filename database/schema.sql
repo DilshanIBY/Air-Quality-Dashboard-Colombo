@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2025 at 08:03 PM
+-- Generation Time: Apr 23, 2025 at 07:30 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -124,7 +124,37 @@ INSERT INTO `aqi_readings` (`id`, `sensor_id`, `aqi_value`, `pm25_value`, `pm10_
 (47, 'SEN007', 112.06, 89.65, 134.47, 27.2, 65.1, '2025-04-12 17:18:37', 1),
 (48, 'SEN008', 49.78, 39.82, 59.74, 30.8, 44.0, '2025-04-12 17:18:37', 1),
 (49, 'SEN009', 52.92, 42.34, 63.50, 24.6, 72.4, '2025-04-12 17:18:37', 1),
-(50, 'SEN010', 53.74, 42.99, 64.49, 23.1, 32.8, '2025-04-12 17:18:37', 1);
+(50, 'SEN010', 53.74, 42.99, 64.49, 23.1, 32.8, '2025-04-12 17:18:37', 1),
+(51, 'SEN001', 53.82, 43.06, 64.58, 21.0, 33.8, '2025-04-23 16:11:00', 1),
+(52, 'SEN002', 64.03, 51.22, 76.84, 27.5, 32.8, '2025-04-23 16:11:00', 1),
+(53, 'SEN003', 69.00, 55.20, 82.80, 26.3, 60.5, '2025-04-23 16:11:00', 1),
+(54, 'SEN004', 31.85, 25.48, 38.22, 20.3, 46.5, '2025-04-23 16:11:00', 1),
+(55, 'SEN005', 89.86, 71.89, 107.83, 27.1, 64.9, '2025-04-23 16:11:00', 1),
+(56, 'SEN006', 104.82, 83.86, 125.78, 20.6, 48.4, '2025-04-23 16:11:00', 1),
+(57, 'SEN007', 79.15, 63.32, 94.98, 34.6, 66.8, '2025-04-23 16:11:00', 1),
+(58, 'SEN008', 44.45, 35.56, 53.34, 25.3, 50.9, '2025-04-23 16:11:00', 1),
+(59, 'SEN009', 57.02, 45.62, 68.42, 32.0, 61.6, '2025-04-23 16:11:00', 1),
+(60, 'SEN010', 60.43, 48.34, 72.52, 28.4, 77.4, '2025-04-23 16:11:00', 1),
+(61, 'SEN001', 31.43, 25.14, 37.72, 21.3, 53.0, '2025-04-23 16:11:20', 1),
+(62, 'SEN002', 56.90, 45.52, 68.28, 26.6, 55.6, '2025-04-23 16:11:20', 1),
+(63, 'SEN003', 56.52, 45.22, 67.82, 21.0, 79.3, '2025-04-23 16:11:20', 1),
+(64, 'SEN004', 39.89, 31.91, 47.87, 24.3, 68.3, '2025-04-23 16:11:20', 1),
+(65, 'SEN005', 54.40, 43.52, 65.28, 23.4, 35.9, '2025-04-23 16:11:20', 1),
+(66, 'SEN006', 55.88, 44.70, 67.06, 23.2, 54.7, '2025-04-23 16:11:20', 1),
+(67, 'SEN007', 77.12, 61.70, 92.54, 26.8, 41.5, '2025-04-23 16:11:20', 1),
+(68, 'SEN008', 36.85, 29.48, 44.22, 28.6, 42.5, '2025-04-23 16:11:20', 1),
+(69, 'SEN009', 55.01, 44.01, 66.01, 31.1, 34.5, '2025-04-23 16:11:20', 1),
+(70, 'SEN010', 51.97, 41.58, 62.36, 21.9, 49.7, '2025-04-23 16:11:20', 1),
+(71, 'SEN001', 37.43, 29.94, 44.92, 21.1, 64.9, '2025-04-23 16:15:51', 1),
+(72, 'SEN002', 59.90, 47.92, 71.88, 20.9, 57.6, '2025-04-23 16:15:51', 1),
+(73, 'SEN003', 39.14, 31.31, 46.97, 26.4, 42.8, '2025-04-23 16:15:51', 1),
+(74, 'SEN004', 41.56, 33.25, 49.87, 31.1, 59.5, '2025-04-23 16:15:51', 1),
+(75, 'SEN005', 59.73, 47.78, 71.68, 26.3, 73.9, '2025-04-23 16:15:51', 1),
+(76, 'SEN006', 88.48, 70.78, 106.18, 23.4, 32.1, '2025-04-23 16:15:51', 1),
+(77, 'SEN007', 115.82, 92.66, 138.98, 28.5, 50.8, '2025-04-23 16:15:51', 1),
+(78, 'SEN008', 48.35, 38.68, 58.02, 23.6, 56.7, '2025-04-23 16:15:51', 1),
+(79, 'SEN009', 43.66, 34.93, 52.39, 29.6, 42.3, '2025-04-23 16:15:51', 1),
+(80, 'SEN010', 63.48, 50.78, 76.18, 29.6, 33.2, '2025-04-23 16:15:51', 1);
 
 -- --------------------------------------------------------
 
@@ -209,18 +239,21 @@ CREATE TABLE `system_logs` (
   `log_type` enum('info','warning','error','security') NOT NULL,
   `message` text NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `ip_address` varchar(45) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `full_name` varchar(255) DEFAULT NULL,
+  `ip_address` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `system_logs`
 --
 
-INSERT INTO `system_logs` (`id`, `log_type`, `message`, `user_id`, `ip_address`, `created_at`) VALUES
-(9, 'security', 'Successful login', 1, '::1', '2025-04-12 17:04:21'),
-(10, 'security', 'User logged out', 1, '::1', '2025-04-12 17:08:58'),
-(12, 'security', 'Successful login', 1, '::1', '2025-04-12 17:09:36');
+INSERT INTO `system_logs` (`id`, `log_type`, `message`, `user_id`, `full_name`, `ip_address`, `created_at`) VALUES
+(30, 'security', 'Successful login', 1, 'Ranuka Gayesh', '::175.157.117.108', NULL),
+(31, 'security', 'User logged out', 1, 'Ranuka Gayesh', '::175.157.117.108', NULL),
+(32, 'security', 'Successful login', 2, 'Dilshan Irugal', '::175.157.157.172', NULL),
+(33, 'security', 'User logged out', 2, 'Dilshan Irugal', '::175.157.157.172', NULL),
+(34, 'security', 'Successful login', 1, 'Ranuka Gayesh', '::175.157.117.108', NULL);
 
 -- --------------------------------------------------------
 
@@ -246,7 +279,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `email`, `full_name`, `status`, `last_login`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '$2a$12$MwWZVBJFwHDo9EVxxaAgoe3L4QkNDFw4NVbGRuY.JTtmDgNIRSfha', 'system_admin', 'admin@airquality.lk', 'System Administrator', 'active', '2025-04-12 17:09:35', '2025-04-12 16:48:01', '2025-04-12 17:09:35');
+(1, 'admin', '$2a$12$MwWZVBJFwHDo9EVxxaAgoe3L4QkNDFw4NVbGRuY.JTtmDgNIRSfha', 'system_admin', 'admin@airquality.lk', 'Ranuka Gayesh', 'active', '2025-04-23 17:27:12', '2025-04-12 16:48:01', '2025-04-23 17:27:12'),
+(2, 'manager', '$2y$10$s6g8tvsY38pfGnYsra/wROP602UKl365efIevDB0KmvUjbu.QGNHy', 'monitoring_admin', 'dilshaniru@gmail.com', 'Dilshan Irugal', 'active', '2025-04-23 17:26:58', '2025-04-23 16:44:05', '2025-04-23 17:26:58');
 
 --
 -- Indexes for dumped tables
@@ -311,7 +345,7 @@ ALTER TABLE `alert_thresholds`
 -- AUTO_INCREMENT for table `aqi_readings`
 --
 ALTER TABLE `aqi_readings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `sensors`
@@ -329,13 +363,13 @@ ALTER TABLE `simulation_settings`
 -- AUTO_INCREMENT for table `system_logs`
 --
 ALTER TABLE `system_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
