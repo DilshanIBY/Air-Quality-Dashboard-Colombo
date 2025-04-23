@@ -25,6 +25,10 @@ Real-time air quality monitoring system for Colombo city with simulated sensor d
 3. Public User - View air quality information
 4. System Administrator - Infrastructure management
 
-## Admin Login Details
+## Login Details for a System Admin
 - Username: admin
 - Password: admin
+
+## Login Details for a Monitoring Admin
+- Username: manager
+- Password: manager
